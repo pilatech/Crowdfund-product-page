@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+:root {
+ font-size: 62.5%;
+}
+body {
+ font-family: Commissioner, sans-serif;
+ font-size: 1.6rem;
+}
+
+.container {
+ max-width: 37.5rem;
+ margin-inline: auto;
+}
+
+.hero {
+ background: linear-gradient(#000, transparent),url(images/image-hero-mobile.jpg);
+ background-size: cover;
+ height: 50vh;
+}
+
+.nav {
+ display: flex;
+ padding-block: 3.5rem;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.nav__menu {
+ position: absolute;
+ background: #fff;
+ transform: translateY(14rem);
+ opacity: 0;
+ visibility: hidden;
+ right: 0;
+ left: 0;
+ max-width: 37.5rem;
+ margin-inline: auto;
+ border-radius: 1rem;
+ transition: .25s;
+}
+
+.nav--active .nav__menu {
+ transform: translateY(15rem);
+ opacity: 1;
+ visibility: visible;
+ transition: .25s;
+}
+
+.nav__item {
+ list-style: none;
+ padding-block: 2.5rem;
+}
+
+.nav__item:not(:last-child){
+ border-bottom: 1px solid hsla(0, 0%, 48%, 0.386);
+}
+
+.nav__link {
+ padding: 3rem;
+ text-decoration: none;
+ color: #000;
+ font-weight: 700;
+ font-size: 1.8rem;
+}
+
+.nav__toggle {
+ background: transparent;
+ border: none;
+ cursor: pointer;
+}
+
+@media(min-width: 960px){
+ .container {
+  max-width: 96rem;
+ }
+
+ .hero {
+  background: linear-gradient(#000, transparent), url(images/image-hero-desktop.jpg);
+  background-size: cover;
+  height: 40vh;
+ }
+
+ .nav__toggle {
+  display: none;
+ }
+ .nav__menu {
+  position: static;
+  transform: translate(0);
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  max-width: initial;
+  background: none;
+  border-radius: 0;
+  margin-inline: initial;
+ }
+
+ .nav__item:not(:last-child){
+  border-bottom: none;
+  margin-right: 4rem;
+ }
+
+ .nav__item {
+  padding: 0;
+ }
+ .nav__link {
+  padding: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+ }
+}
